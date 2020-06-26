@@ -1,0 +1,23 @@
+{
+  "name": "graph",
+  "version": "1.0.0",
+  "description": "work with Graph",
+  "main": "graph.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beardm4n/Graph.git"
+  },
+  "keywords": [
+    "graph",
+    "algorithms"
+  ],
+  "author": "Korovko Dmitrii <dmitriykorovko@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beardm4n/Graph/issues"
+  },
+  "homepage": "https://github.com/beardm4n/Graph#readme"
+}
