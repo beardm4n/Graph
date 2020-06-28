@@ -5,17 +5,13 @@ class Bag {
     add(v: number) {
         this.vertices.push(v);
     }
-
-    iterator() {
-        return this.vertices;
-    }
 }
 
 class Graph {
     // number of vertices
-    V: number;
+    readonly V: number;
     // array of indexes' vertices with list of adjacent vertices for each vertex of array
-    adj: Bag[] = [];
+    readonly adj: Bag[] = [];
 
     constructor(V: number) {
         this.V = V;
@@ -29,7 +25,11 @@ class Graph {
         this.adj[w].add(v);
     }
 
+    getV() {
+        return this.adj;
+    }
+
     getAdj(v: number) {
-        return this.adj[v].iterator();
+        return this.adj[v].vertices
     }
 }
