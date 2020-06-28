@@ -1,6 +1,11 @@
 // adjacency list vertices of graph
 class Bag {
-    vertices: number[] = [];
+    readonly vertices: number[] = [];
+    readonly vertex: number;
+
+    constructor(v: number) {
+        this.vertex = v;
+    }
 
     add(v: number) {
         this.vertices.push(v);
@@ -16,7 +21,7 @@ class Graph {
     constructor(V: number) {
         this.V = V;
         for (let i = 0; i < this.V; i++) {
-            this.adj[i] = new Bag();
+            this.adj[i] = new Bag(i);
         }
     }
 
