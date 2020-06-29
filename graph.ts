@@ -7,7 +7,7 @@ class Bag {
         this.vertex = v;
     }
 
-    add(v: number) {
+    add(v: number): void {
         this.vertices.push(v);
     }
 }
@@ -25,7 +25,7 @@ class Graph {
         }
     }
 
-    addEdge(v: number, w: number) {
+    addEdge(v: number, w: number): void {
         this.adj[v].add(w);
         this.adj[w].add(v);
     }
