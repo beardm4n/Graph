@@ -1,5 +1,5 @@
 // adjacency list vertices of graph
-class Bag {
+export class Bag {
     readonly vertices: number[] = [];
     readonly vertex: number;
 
@@ -12,7 +12,7 @@ class Bag {
     }
 }
 
-class Graph {
+export class Graph {
     // number of vertices
     readonly V: number;
     // vertex-indexed array of lists.
