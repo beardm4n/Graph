@@ -15,7 +15,7 @@ class Bag {
 class Graph {
     // number of vertices
     readonly V: number;
-    // array of indexes' vertices with list of adjacent vertices for each vertex of array
+    // vertex-indexed array of lists.
     readonly adj: Bag[] = [];
 
     constructor(V: number) {
