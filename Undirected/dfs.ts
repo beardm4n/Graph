@@ -1,18 +1,5 @@
 import { Graph } from "./graph";
 
-const G = new Graph(4);
-
-// for (let i = 0; i < G.getV().length; i++) {
-//     const R = Math.floor(Math.random() * G.getV().length)
-//     G.addEdge(i, R);
-// }
-
-G.addEdge(0, 1);
-G.addEdge(0, 2);
-G.addEdge(1, 3);
-
-console.log(G.getV())
-
 // Depth-First Search API
 export class DepthFirstSearch {
     readonly marked: boolean[] = [];    // array of traversed vertices
@@ -60,6 +47,3 @@ export class DepthFirstSearch {
         return PATH
     }
 }
-
-const d = new DepthFirstSearch(G, 0);
-console.log('PATH', d.getPath(3))
