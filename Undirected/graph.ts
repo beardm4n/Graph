@@ -12,7 +12,7 @@ export class Bag {
     }
 }
 
-// Graph API
+// Graph API - simple implementation
 export class Graph {
     // number of vertices
     readonly V: number;
