@@ -16,11 +16,10 @@ export class DepthFirstSearch {
         this.dfs(G, this.s);
     }
 
-    dfs(G: Graph, v: number) {
+    dfs(G: Graph, v: number): void {
         this.marked[v] = true;
 
         for (const w of G.getAdj(v)) {
-            console.log(`${w} - ${this.marked[w]}`)
             if (!this.marked[w]) {
                 this.pathTo[w] = v;
                 this.dfs(G, w);
