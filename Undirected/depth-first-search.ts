@@ -28,11 +28,11 @@ export class DepthFirstSearch {
     }
 
     // check the path on current vertex
-    hasPathTo(v: number) {
+    hasPathTo(v: number): boolean {
         return this.marked[v];
     }
 
-    getPath(v: number) {
+    getPath(v: number): number[] {
         if (!this.hasPathTo(v)) return null;
 
         const PATH: number[] = [];
