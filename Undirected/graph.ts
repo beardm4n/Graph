@@ -1,41 +1,41 @@
-// adjacency list vertices of graph
-export class Bag {
-    readonly vertices: number[] = [];
-    readonly vertex: number;
+import {Bag} from "./Bag"; // linked list
 
-    constructor(v: number) {
-        this.vertex = v;
+class Graph {
+    public V: number;       // number of vertices
+    readonly adj: Bag[] = [];    // array of vertices
+
+    constructor() {
+        this.V = 0;
     }
 
-    add(v: number): void {
-        this.vertices.push(v);
-    }
-}
-
-// Graph API - simple implementation
-export class Graph {
-    // number of vertices
-    readonly V: number;
-    // vertex-indexed array of lists.
-    readonly adj: Bag[] = [];
-
-    constructor(V: number) {
-        this.V = V;
-        for (let i = 0; i < this.V; i++) {
-            this.adj[i] = new Bag(i);
-        }
+    addVertex() {
+        const bag = new Bag(this.V++);
+        this.adj.push(bag);
+        return bag;
     }
 
-    addEdge(v: number, w: number): void {
-        this.adj[v].add(w);
-        this.adj[w].add(v);
+    addEdge(v: Bag, w: Bag): void {
+        this.adj[v.v].add(w);
+        this.adj[w.v].add(v);
     }
 
-    getV() {
-        return this.adj;
+    getLength() {
+        return this.V;
     }
 
     getAdj(v: number) {
-        return this.adj[v].vertices
+        // Iterator
     }
 }
+const a = new Graph();
+const v1 = a.addVertex()
+const v2 = a.addVertex()
+const v3 = a.addVertex()
+const v4 = a.addVertex()
+
+a.addEdge(v1, v2)
+a.addEdge(v1, v3)
+a.addEdge(v1, v4)
+console.log(a)
+console.log(v1)
+console.log(v1.getAdjVertices())
