@@ -1,7 +1,7 @@
 // Node of Linked list
 class NodeElement {
     public item: Bag;
-    public next: NodeElement;
+    public previously: NodeElement;
 }
 
 export class Bag {
@@ -19,17 +19,14 @@ export class Bag {
         const tempNode = this.first;
         this.first = new NodeElement();
         this.first.item = item;
-        this.first.next = tempNode;
+        this.first.previously = tempNode;
         this.n++;
     }
 
-    getAdjVertices() {
-        const a: Bag[] = [];
+    // @ts-ignore
+    public *[Symbol.iterator]() {
         while (this.first != null) {
-            const temp = this.first;
-            a.push(this.first.item);
-            this.first = this.first.next;
+            yield this.first.previously;
         }
-        return a
     }
 }

@@ -1,6 +1,6 @@
 import {Bag} from "./Bag"; // linked list
 
-class Graph {
+export class Graph {
     public V: number;       // number of vertices
     readonly adj: Bag[] = [];    // array of vertices
 
@@ -24,7 +24,7 @@ class Graph {
     }
 
     getAdj(v: number) {
-        // Iterator
+        return this.adj[v];
     }
 }
 const a = new Graph();
@@ -37,5 +37,13 @@ a.addEdge(v1, v2)
 a.addEdge(v1, v3)
 a.addEdge(v1, v4)
 console.log(a)
-console.log(v1)
-console.log(v1.getAdjVertices())
+
+// for (const w of a.getAdj(0)) {
+//     console.log(w)
+// }
+const v0 = a.getAdj(0)
+console.log(v0)
+
+for (const i of v0) {
+    console.log('NODE', i)
+}
