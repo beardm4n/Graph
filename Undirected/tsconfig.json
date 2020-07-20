@@ -5,8 +5,5 @@
     "sourceMap": true,
     "downlevelIteration": true,
     "lib": ["esnext", "DOM"]
-  },
-  "exclude": [
-    "node_modules"
-  ]
+  }
 }

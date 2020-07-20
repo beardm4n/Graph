@@ -1,10 +1,10 @@
 // Node of Linked list
 class NodeElement {
-    public item: Bag;
+    public item: BagAdt;
     public previously: NodeElement;
 }
 
-export class Bag {
+export class BagAdt {
     readonly v: number;         // number of Graph's index array
     public first: NodeElement;
     private n: number;          // number of adjacency vertices
@@ -15,7 +15,7 @@ export class Bag {
         this.n = 0;
     }
 
-    add(item: Bag): void {
+    add(item: BagAdt): void {
         const tempNode = this.first;
         this.first = new NodeElement();
         this.first.item = item;
@@ -23,8 +23,7 @@ export class Bag {
         this.n++;
     }
 
-    // @ts-ignore
-    public *[Symbol.iterator]() {
+    public *[Symbol.iterator](): IterableIterator<any> {
         while (this.first != null) {
             yield this.first.previously;
         }
